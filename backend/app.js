@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-app.use(cors()); 
+app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 const REED_API_KEY = process.env.REED_API_KEY;
@@ -18,7 +18,9 @@ app.get("/api/jobs", async (req, res) => {
 
     const response = await fetch(url, {
       headers: {
-        Authorization: `Basic ${Buffer.from(`${REED_API_KEY}:`).toString("base64")}`,
+        Authorization: `Basic ${Buffer.from(`${REED_API_KEY}:`).toString(
+          "base64"
+        )}`,
       },
     });
 
@@ -34,4 +36,6 @@ app.get("/api/jobs", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`Server running on port http://localhost:${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running on port http://localhost:${PORT}`)
+);
