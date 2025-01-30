@@ -1,17 +1,24 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import styles from "./NavBar.module.css";
 
-import "./NavBar.css"
-
-function Navbar () {
+function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="logo">AppLogo</div>
-      <ul className="nav-links">
-        <li className="active"><NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>Home</NavLink></li>
-        <li><NavLink to="/appliedpage" className={({isActive}) => (isActive ? "active" : " ")}>Applied Jobs</NavLink></li>
+    <nav className={styles.navbar}>
+      <img src="/images/logo.jpeg" className={styles.logo} alt="logo" />
+      <ul className={styles.navLinks}>
+        <li className={styles.navItem}>
+          <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : "")}>
+            Home
+          </NavLink>
+        </li>
+        <li className={styles.navItem}>
+          <NavLink to="/applied" className={({ isActive }) => (isActive ? styles.active : "")}>
+            Applied Jobs
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
-};
+}
 
 export default Navbar;
