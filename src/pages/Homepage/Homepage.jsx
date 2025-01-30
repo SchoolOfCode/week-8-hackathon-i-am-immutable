@@ -1,3 +1,4 @@
+import JobCard from "../../components/JobCard/JobCard.jsx";
 import SearchBar from "../../components/SearchBar/SearchBar.jsx";
 
 function Homepage() {
@@ -5,6 +6,7 @@ function Homepage() {
     <>
       <h1>Homepage</h1>
       <SearchBar />
+      <JobCard />
     </>
   );
 }
