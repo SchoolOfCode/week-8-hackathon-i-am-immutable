@@ -2,11 +2,11 @@
 article {
   background-color: #2a2a2a; /* Dark background for the job card */
   color: #f0f0f0; /* Light text color */
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 20px; /* Rounded corners */
   padding: 20px;
   margin: 15px;
   list-style: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow around the card */
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow around the card */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
 }
 
@@ -38,8 +38,8 @@ article p {
 
 /* Salary styling */
 article p:nth-child(4) {
-  font-weight: bold;
-  color: #8dbf00; /* Green for salary to stand out */
+  font-weight: 450;
+  color: yellow; /* Green for salary to stand out */
 }
 
 /* Link styling */
