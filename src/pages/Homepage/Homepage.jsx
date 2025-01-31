@@ -6,34 +6,32 @@ function Homepage() {
   const [jobs, setJobs] = useState([]);
   const api_key = import.meta.env.VITE_API_KEY;
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("http://localhost:4000/api/jobs", {
-          headers: { authorization: `Basic ${btoa(api_key + ":")}` },
-        });
+  async function fetchData(searchParams = {}) {
+    try {
+      const query = new URLSearchParams(searchParams).toString();
+      const response = await fetch(`http://localhost:4000/api/jobs?${query}`, {
+        headers: { authorization: `Basic ${btoa(api_key + ":")}` },
+      });
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-
-        const data = await response.json();
-        setJobs(data.results); // Adjust based on API response structure
-      } catch (error) {
-        console.error("Error fetching jobs:", error);
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
       }
+
+      const data = await response.json();
+      setJobs(data.results || []);
+    } catch (error) {
+      console.error("Error fetching jobs:", error);
     }
-
-    fetchData();
-  }, [api_key]); // Only runs once when component mounts
-
-  if (jobs.length === 0) {
-    return <p>Loading jobs...</p>;
   }
+
+  useEffect(() => {
+    fetchData(); // Fetch initial jobs
+  }, [api_key]);
+
   return (
     <>
       <h1>Jobs</h1>
-      <SearchBar />
+      <SearchBar onSearch={fetchData} />
       <JobsContainer jobs={jobs} />
     </>
   );

@@ -1,12 +1,30 @@
-function SearchBar() {
+import { useState } from "react";
+
+function SearchBar({ onSearch }) {
+  const [keywords, setKeywords] = useState("");
+  const [location, setLocation] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onSearch({ keywords, location });
+  }
+
   return (
-    <>
-      <form>
-        <input type="text" placeholder="Search by keyword" />
-        <input type="text" placeholder="Location" />
-        <input type="text" placeholder="Salary range" />
-      </form>
-    </>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Job title"
+        value={keywords}
+        onChange={(e) => setKeywords(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Location"
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+      />
+      <button type="submit">Search</button>
+    </form>
   );
 }
 

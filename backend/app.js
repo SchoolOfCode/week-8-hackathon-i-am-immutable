@@ -13,10 +13,13 @@ const REED_API_KEY = process.env.REED_API_KEY;
 
 app.get("/api/jobs", async (req, res) => {
   try {
-    const url =
-      "https://www.reed.co.uk/api/1.0/search?keywords=developer&locationName=London&distanceFromLocation=10&permanent=true&fullTime=true&minimumSalary=30000&maximumSalary=60000";
+    const { keywords, location } = req.query;
 
-    const response = await fetch(url, {
+    const url = new URL("https://www.reed.co.uk/api/1.0/search");
+    url.searchParams.append("keywords", keywords || "developer");
+    url.searchParams.append("locationName", location || "London");
+
+    const response = await fetch(url.toString(), {
       headers: {
         Authorization: `Basic ${Buffer.from(`${REED_API_KEY}:`).toString(
           "base64"
