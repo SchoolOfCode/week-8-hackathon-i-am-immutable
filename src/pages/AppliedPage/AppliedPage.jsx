@@ -1,21 +1,20 @@
-// import Navbar from "../../components/NavBar/NavBar.jsx";
 import styles from "./AppliedPage.module.css";
 import React, { useReducer } from "react";
 
-// Define possible states
-const initialState = "NEW"; // Default state
+//Set initial state
+const initialState = "NEW";
 
-// Reducer function
+//Reducer Function
 const jobReducer = (state, action) => {
-  switch (action.type) {
-    case "AWAITING_INTERVIEW":
-      return "AWAITING_INTERVIEW";
+  switch (action) {
+    case "NEW":
+      return "NEW";
     case "REJECTED":
       return "REJECTED";
     case "APPLIED":
       return "APPLIED";
-      case "NEW":
-      return "NEW";
+      case "AWAITING_INTERVIEW":
+      return "AWAITING_INTERVIEW";
         case "VIEWED":
             return "VIEWED";
     default:
@@ -40,23 +39,23 @@ function AppliedPage() {
       <p className={styles.salary}>Salary: £40,000</p>
       <p className={styles.date}>30/01/2025</p>
 
-      <button onClick={() => dispatch({ type: "NEW" })}>
+      <button onClick={() => dispatch("NEW")}>
         New
       </button>
 
-      <button onClick={() => dispatch({ type: "VIEWED" })}>
+      <button onClick={() => dispatch("VIEWED")}>
         Viewed
       </button>
 
-      <button onClick={() => dispatch({ type: "AWAITING_INTERVIEW" })}>
+      <button onClick={() => dispatch("AWAITING_INTERVIEW" )}>
         Awaiting Interview
       </button>
       
-      <button onClick={() => dispatch({ type: "REJECTED" })}>
+      <button onClick={() => dispatch("REJECTED" )}>
         Rejected
       </button>
 
-      <button onClick={() => dispatch({ type: "APPLIED" })}>
+      <button onClick={() => dispatch( "APPLIED" )}>
         Applied
       </button>
       </div>
