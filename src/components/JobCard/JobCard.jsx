@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import JobCardStyles from "./JobCard.module.css";
 import { useState } from "react";
 
 function JobCard({ job }) {
@@ -7,7 +8,7 @@ function JobCard({ job }) {
     setShowJob(!showJob);
   }
   return (
-    <article onClick={toggleJob}>
+    <article className={JobCardStyles.styles} onClick={toggleJob}>
       {!showJob ? (
         <>
           {/* <img alt="company-logo" src={companyLogo} width={100} /> */}

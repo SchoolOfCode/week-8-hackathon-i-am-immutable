@@ -1,0 +1,74 @@
+/* General styling for the article card */
+article {
+  background-color: #2a2a2a; /* Dark background for the job card */
+  color: #f0f0f0; /* Light text color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  margin: 15px;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow around the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+article:hover {
+  transform: translateY(-5px); /* Slightly lift the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+/* Title and employer info styling */
+article h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #eaeaea; /* Lighter color for the job title */
+  margin-bottom: 10px;
+}
+
+article h3 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #b0b0b0; /* Slightly lighter color for the employer name */
+  margin-bottom: 5px;
+}
+
+article p {
+  font-size: 1rem;
+  color: #d0d0d0; /* Lighter text for paragraphs */
+  margin: 5px 0;
+}
+
+/* Salary styling */
+article p:nth-child(4) {
+  font-weight: bold;
+  color: #8dbf00; /* Green for salary to stand out */
+}
+
+/* Link styling */
+article a {
+  color: #5e81ac; /* Soft blue for the job link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+article a:hover {
+  text-decoration: underline; /* Underline on hover for better user interaction */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  article {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  article h2 {
+    font-size: 1.4rem;
+  }
+
+  article h3 {
+    font-size: 1rem;
+  }
+
+  article p {
+    font-size: 0.9rem;
+  }
+}
