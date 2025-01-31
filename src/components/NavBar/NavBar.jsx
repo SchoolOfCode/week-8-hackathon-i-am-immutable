@@ -7,12 +7,18 @@ function Navbar() {
       <img src="/images/logo.jpeg" className={styles.logo} alt="logo" />
       <ul className={styles.navLinks}>
         <li className={styles.navItem}>
-          <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : "")}>
-            Home
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+          >
+            Jobs
           </NavLink>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/applied" className={({ isActive }) => (isActive ? styles.active : "")}>
+          <NavLink
+            to="/applied"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+          >
             Applied Jobs
           </NavLink>
         </li>
