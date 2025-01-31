@@ -30,7 +30,7 @@ function Homepage() {
 
   return (
     <>
-      <h1>Homepage</h1>
+      <h1>Jobs</h1>
       <SearchBar onSearch={fetchData} />
       <JobsContainer jobs={jobs} />
     </>
