@@ -4,29 +4,12 @@
 
 ### Some of the skills we have tried to use are; Fetching an API, using useState(), useReducer() and CSS styling.
 
-Evaluation Criteria ⚡
-Our project will be evaluated based on the following factors:
+#### Running the app:
 
-Teamwork 🤝
-Did the team collaborate effectively?
-What worked well?
-What could be improved for next time?
+1. To run the app open the terminal and run `npm i`, then `npm run dev`.
 
-Presentation 🗣️
-Was the demo clear, concise, and within the time limit?
+2. Next open another terminal, change directories into the backend by doing `cd backend`. After that, run `npm i`, then `npm start`.
 
-Plan Quality 📑
-Did the team create and follow a requirements table for their resource?
-Did they effectively plan their database tables/schema?
+3. Open up your preferred browser and type `http://localhost:5173/` in the search bar, press enter and you should see the website!
 
-Code Quality 📝
-Is the code clean, well-formatted, and structured?
-
-Git Practices 🔄
-Were changes documented with frequent, meaningful commits?
-
-Functionality ⚙️
-Does the application work as expected?
-
-MVP Mentality ✅
-Are features fully implemented, robust, and well executed?
+4. Enjoy job hunting!
